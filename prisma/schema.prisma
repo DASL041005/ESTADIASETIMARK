@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Clientes {
+  id_cliente   Int                      @id @default(autoincrement())
+  nombre       String
+  correo       String                   @unique
+  telefono     String?
+  direccion    String?
+  tipo_cliente String
+  cotizaciones Cotizaciones[]
+  precios      PreciosClienteProducto[]
+}
+
+model Usuarios {
+  id_usuario   Int            @id @default(autoincrement())
+  nombre       String
+  correo       String         @unique
+  contrasena   String
+  rol          String
+  cotizaciones Cotizaciones[]
+}
+
+model Productos {
+  id_producto Int                      @id @default(autoincrement())
+  nombre      String
+  descripcion String?
+  precio_base Float
+  stock       Int
+  id_tipo     Int?
+  detalle     DetalleCotizacion[]
+  precios     PreciosClienteProducto[]
+  tipo        TiposProducto?           @relation(fields: [id_tipo], references: [id_tipo])
+
+  @@index([id_tipo], map: "Productos_id_tipo_fkey")
+}
+
+model Cotizaciones {
+  id_cotizacion   Int                 @id @default(autoincrement())
+  id_cliente      Int
+  id_usuario      Int
+  fecha_solicitud DateTime            @default(now())
+  id_estado       Int
+  cliente         Clientes            @relation(fields: [id_cliente], references: [id_cliente])
+  estado          EstadosCotizacion   @relation(fields: [id_estado], references: [id_estado])
+  usuario         Usuarios            @relation(fields: [id_usuario], references: [id_usuario])
+  detalles        DetalleCotizacion[]
+
+  @@index([id_cliente], map: "Cotizaciones_id_cliente_fkey")
+  @@index([id_estado], map: "Cotizaciones_id_estado_fkey")
+  @@index([id_usuario], map: "Cotizaciones_id_usuario_fkey")
+}
+
+model DetalleCotizacion {
+  id_detalle    Int          @id @default(autoincrement())
+  id_cotizacion Int
+  id_producto   Int
+  cantidad      Int
+  precio_final  Float
+  cotizacion    Cotizaciones @relation(fields: [id_cotizacion], references: [id_cotizacion])
+  producto      Productos    @relation(fields: [id_producto], references: [id_producto])
+
+  @@index([id_cotizacion], map: "DetalleCotizacion_id_cotizacion_fkey")
+  @@index([id_producto], map: "DetalleCotizacion_id_producto_fkey")
+}
+
+model PreciosClienteProducto {
+  id_precio       Int       @id @default(autoincrement())
+  id_cliente      Int
+  id_producto     Int
+  precio_especial Float
+  cliente         Clientes  @relation(fields: [id_cliente], references: [id_cliente])
+  producto        Productos @relation(fields: [id_producto], references: [id_producto])
+
+  @@index([id_cliente], map: "PreciosClienteProducto_id_cliente_fkey")
+  @@index([id_producto], map: "PreciosClienteProducto_id_producto_fkey")
+}
+
+model EstadosCotizacion {
+  id_estado     Int            @id @default(autoincrement())
+  nombre_estado String
+  cotizaciones  Cotizaciones[]
+}
+
+model TiposProducto {
+  id_tipo     Int         @id @default(autoincrement())
+  nombre_tipo String
+  productos   Productos[]
+}
+
+
