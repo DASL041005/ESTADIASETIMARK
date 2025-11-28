@@ -1,0 +1,114 @@
+/* src/pages/LoginPage.css */
+.login-page {
+  /* Usaremos un fondo con el azul oscuro de tu paleta */
+  background-color: #003B73; /* Azul oscuro */
+  /* Si aún quieres un fondo con patrón tecnológico: */
+  /* background: url('URL_DE_TU_IMAGEN_DE_FONDO_TECNOLOGICO') no-repeat center center fixed; */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  padding: 40px 0;
+}
+
+.login-container {
+  display: flex;
+  width: 900px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Paneles */
+.login-info-panel, .login-form-panel {
+  padding: 40px;
+  width: 50%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF; /* Texto blanco */
+}
+
+/* Estilos Columna Izquierda (Verde-azulado) */
+.panel-left {
+  background-color: rgba(129, 246, 234, 0.8); /* Verde-azulado con transparencia */
+  text-align: center;
+}
+
+.logo-placeholder {
+    margin-bottom: 20px;
+    height: 80px; /* Altura para el logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo real en lugar del placeholder con X */
+.logo-placeholder .etimark-logo-small {
+    height: 100%; 
+    width: auto;
+    max-width: 200px;
+ /* Para hacer el logo blanco sobre fondo de color */
+}
+
+/* Quita el .box-x si usas el logo */
+/* .box-x { ... } */
+
+
+/* Estilos Columna Derecha (Turquesa claro) */
+.panel-right {
+  background-color: rgba(0, 168, 232, 0.9); /* Turquesa claro con transparencia */
+}
+
+/* Formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #003B73; /* Color de texto en inputs */
+}
+
+.forgot-password {
+  color: #FFFFFF; /* Blanco */
+  text-align: right;
+  margin: 10px 0 20px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+  background-color: #FFFFFF; /* Blanco */
+  color: #003B73; /* Azul oscuro */
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #E0E0E0; /* Gris claro */
+}

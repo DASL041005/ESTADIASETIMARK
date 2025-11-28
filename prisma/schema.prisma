@@ -14,8 +14,10 @@ model Clientes {
   telefono     String?
   direccion    String?
   tipo_cliente String
+  contrasena   String
   cotizaciones Cotizaciones[]
   precios      PreciosClienteProducto[]
+  tickets      Tickets[]
 }
 
 model Usuarios {
@@ -82,6 +84,18 @@ model PreciosClienteProducto {
   @@index([id_producto], map: "PreciosClienteProducto_id_producto_fkey")
 }
 
+model Tickets {
+  id_ticket      Int      @id @default(autoincrement())
+  id_cliente     Int
+  asunto         String
+  mensaje        String
+  fecha_creacion DateTime @default(now())
+  estado         String   @default("pendiente")
+  cliente        Clientes @relation(fields: [id_cliente], references: [id_cliente])
+
+  @@index([id_cliente], map: "Tickets_id_cliente_fkey")
+}
+
 model EstadosCotizacion {
   id_estado     Int            @id @default(autoincrement())
   nombre_estado String
@@ -93,5 +107,3 @@ model TiposProducto {
   nombre_tipo String
   productos   Productos[]
 }
-
-

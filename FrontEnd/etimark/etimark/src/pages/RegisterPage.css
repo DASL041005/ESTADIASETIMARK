@@ -1,0 +1,111 @@
+/* src/pages/RegisterPage.css */
+.register-page {
+  /* Usaremos un fondo con el azul oscuro de tu paleta */
+  background-color: #003B73; /* Azul oscuro */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  padding: 40px 0;
+}
+
+.register-container {
+  display: flex;
+  width: 950px;
+  max-width: 95%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Paneles */
+.register-info-panel, .register-form-panel {
+  padding: 40px;
+  width: 50%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF; /* Texto blanco */
+}
+
+/* Estilos Columna Izquierda (Verde-azulado) */
+.panel-left {
+  background-color: rgba(129, 248, 236, 0.8); /* Verde-azulado con transparencia */
+  text-align: center;
+}
+.panel-left ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+.panel-left li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Logo real en lugar del placeholder con X */
+.logo-placeholder {
+    margin-bottom: 20px;
+    height: 80px; /* Altura para el logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-placeholder .etimark-logo-small {
+    height: 100%; 
+    width: auto;
+    max-width: 200px;
+   /* Para hacer el logo blanco sobre fondo de color */
+}
+
+/* Quita el .box-x si usas el logo */
+/* .box-x { ... } */
+
+
+/* Estilos Columna Derecha (Turquesa claro) */
+.panel-right {
+  background-color: rgba(0, 168, 232, 0.9); /* Turquesa claro con transparencia */
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px; 
+  margin: 0 auto;
+}
+
+.register-form label {
+  margin-top: 8px;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.register-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #003B73; /* Color de texto en inputs */
+}
+
+.register-button {
+  background-color: #FFFFFF; /* Blanco */
+  color: #003B73; /* Azul oscuro */
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 25px;
+}
+
+.register-button:hover {
+  background-color: #E0E0E0; /* Gris claro */
+}

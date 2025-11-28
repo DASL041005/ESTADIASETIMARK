@@ -1,17 +1,18 @@
 import express from "express";
 import cors from "cors";
-import router from "./routes/auth.routes"; // <- importa tus rutas
+import authRoutes from "./routes/auth.routes";
+import protectedRoutes from "./routes/protected.routes";
 
 const app = express();
-
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Montar todas las rutas con un prefijo, por ejemplo '/api'
-app.use("/api", router);
+// Rutas públicas
+app.use("/api", authRoutes);
 
-// Ruta raíz opcional
+// Rutas protegidas
+app.use("/api", protectedRoutes);
+
 app.get("/", (_req, res) => {
   res.send("Servidor corriendo ¡Bienvenido!");
 });

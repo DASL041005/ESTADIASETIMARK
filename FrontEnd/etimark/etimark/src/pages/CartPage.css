@@ -1,0 +1,209 @@
+/* src/pages/CartPage.css */
+
+.cart-page-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.cart-title {
+  color: #003B73; /* Azul oscuro */
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #00A8E8; /* Turquesa claro */
+  padding-bottom: 10px;
+}
+
+.cart-content-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.cart-items-list {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo para cada fila de producto */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #E0E0E0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.item-image-container {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex-grow: 1;
+    text-align: left;
+}
+.item-name {
+    font-size: 1.1em;
+    color: #003B73;
+    margin: 0;
+}
+.item-description-small {
+    font-size: 0.85em;
+    color: #666;
+    margin: 3px 0;
+}
+.item-price-unit {
+    font-weight: 500;
+    color: #00A8E8;
+    font-size: 0.9em;
+}
+
+/* Control de Cantidad */
+.item-quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 20px;
+}
+.quantity-input-small {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.quantity-btn {
+    background-color: #E0E0E0;
+    color: #003B73;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.quantity-btn:hover:not(:disabled) {
+    background-color: #ccc;
+}
+.quantity-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Subtotal */
+.item-subtotal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 20px;
+    width: 100px;
+}
+.subtotal-label {
+    font-size: 0.8em;
+    color: #666;
+}
+.subtotal-amount {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #003B73;
+}
+
+/* Botón de Remover */
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #f00;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+/* Panel de Resumen (Derecha) */
+.cart-summary-panel {
+  flex: 1;
+  background-color: #F0F8FF; /* Azul muy claro para el resumen */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+.summary-title {
+    color: #003B73;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #00A8E8;
+    padding-bottom: 10px;
+}
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.total-line {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #003B73;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px dashed #E0E0E0;
+}
+.final-total-amount {
+    color: #E84D4D; /* Rojo para el total final */
+}
+.checkout-btn {
+    background-color: #44E0D0; /* Verde-azulado */
+    color: #003B73;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.checkout-btn:hover {
+    background-color: #37b7a8;
+}
+
+/* Carrito Vacío */
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #E0E0E0;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+}
+.empty-cart h2 {
+    color: #003B73;
+    margin-bottom: 10px;
+}
+.continue-shopping-btn {
+    background-color: #00A8E8; /* Turquesa claro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.continue-shopping-btn:hover {
+    background-color: #0087c2;
+}
+

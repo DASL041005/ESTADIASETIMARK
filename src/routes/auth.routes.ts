@@ -5,6 +5,7 @@ import { Router } from "express";
 // ==============================
 import { login, generateToken } from "../controllers/auth.controllers";
 
+
 import {
   getAllUsers,
   getUserById,
@@ -36,6 +37,14 @@ import {
   updateCotizacion,
   deleteCotizacion
 } from "../controllers/cotizaciones.controller";
+
+import {
+  createTicket,
+  getAllTickets,
+  getTicketById,
+  updateTicket,
+  deleteTicket
+} from "../controllers/tickets.controller";
 
 // ==============================
 // INICIALIZAR ROUTER
@@ -85,5 +94,14 @@ router.get("/cotizaciones/:id", getCotizacionById);
 router.post("/cotizaciones", createCotizacion);
 router.put("/cotizaciones/:id", updateCotizacion);
 router.delete("/cotizaciones/:id", deleteCotizacion);
+
+/* ==============================
+   TICKETS
+============================== */
+router.get("/tickets", getAllTickets);
+router.get("/tickets/:id", getTicketById);
+router.post("/tickets", createTicket);
+router.put("/tickets/:id", updateTicket);
+router.delete("/tickets/:id", deleteTicket);
 
 export default router;
