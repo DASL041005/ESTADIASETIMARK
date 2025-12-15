@@ -1,0 +1,79 @@
+.empleados-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.empleados-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b73;
+  margin-bottom: 20px;
+}
+
+.empleados-table-wrapper {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+}
+
+.empleados-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.empleados-table th {
+  background: #003b73;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.empleados-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+/* ACCIONES */
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.acciones button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.btn-ver {
+  background: #00a8e8;
+  color: blue;
+}
+
+.btn-ver:hover {
+  background: #007bb5;
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #003b73;
+}
+
+.btn-editar:hover {
+  background: #e0a800;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+}
+
+.btn-eliminar:hover {
+  background: #b02a37;
+}

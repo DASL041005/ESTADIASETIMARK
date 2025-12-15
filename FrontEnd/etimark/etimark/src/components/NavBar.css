@@ -1,0 +1,38 @@
+/* src/components/NavBar.css */
+.nav-bar {
+  background-color: #FFFFFF; /* Fondo blanco */
+  border-bottom: 2px solid #E0E0E0; /* Gris claro */
+}
+
+.nav-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.nav-item {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #003B73; /* Azul oscuro */
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+  border-right: 1px solid #E0E0E0; /* Gris claro */
+  border-left: 1px solid transparent;
+}
+
+.nav-item:first-child {
+    border-left: 1px solid #E0E0E0; /* Gris claro */
+}
+
+/* Estilo para el ítem seleccionado */
+.nav-item.active {
+  background-color: #00A8E8; /* Turquesa claro */
+  color: #FFFFFF; /* Blanco */
+  border-bottom: 2px solid #00A8E8; /* Turquesa claro */
+}
+
+.nav-item:not(.active):hover {
+  background-color: #E0E0E0; /* Gris claro */
+  color: #003B73; /* Azul oscuro */
+}

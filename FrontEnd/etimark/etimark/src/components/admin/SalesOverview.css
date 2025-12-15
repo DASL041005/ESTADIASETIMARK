@@ -1,0 +1,15 @@
+.sales-overview {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+}
+
+
+.chart-block {
+background: white;
+padding: 16px;
+border-radius: 10px;
+}
+
+
+.chart-block h3 { margin-bottom: 8px; }

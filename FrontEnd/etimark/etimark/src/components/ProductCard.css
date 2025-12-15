@@ -1,0 +1,94 @@
+/* src/components/ProductCard.css */
+.product-card {
+  background-color: #FFFFFF; /* Blanco */
+  border: 1px solid #E0E0E0; /* Gris claro */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px; /* Altura fija para la imagen */
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-size: 1.2em;
+    color: #003B73; /* Azul oscuro */
+    margin-bottom: 5px;
+    height: 2.4em; /* Límite de dos líneas */
+    overflow: hidden;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+    height: 3.6em; /* Límite de tres líneas */
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.price-section {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  min-height: 25px; /* Para evitar saltos de layout cuando no hay oldPrice */
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+  font-size: 0.85em;
+}
+
+.current-price {
+  font-size: 1.6em;
+  color: #00A8E8; /* Turquesa claro */
+  font-weight: bold;
+}
+
+.product-rating {
+    font-size: 0.9em;
+    color: #FFC107; /* Amarillo para el rating */
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+  background-color: #44E0D0; /* Verde-azulado */
+  color: #003B73; /* Azul oscuro */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto; /* Empuja el botón al final */
+  font-weight: 600;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #37b7a8; /* Un tono más oscuro del verde-azulado */
+}

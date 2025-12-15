@@ -1,0 +1,16 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.admin-content {
+  margin-left: 260px; /* espacio para la sidebar */
+  padding: 20px; /* padding real */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+
+  background: #f4f9ff;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite scroll del contenido, NO del sidebar */
+}

@@ -1,0 +1,123 @@
+/* CONTENEDOR GENERAL */
+.pedidos-container {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+.pedidos-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+/* WRAPPER DE TABLA */
+.pedidos-table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Hace la tabla responsive */
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* TABLA */
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px; /* Para evitar que se deforme */
+}
+
+/* HEAD */
+.pedidos-table thead {
+  background: #f1f5ff;
+}
+
+.pedidos-table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 2px solid #dbe3ff;
+}
+
+/* BODY */
+.pedidos-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+/* FILA HOVER */
+.pedidos-table tbody tr:hover {
+  background: #f9fbff;
+}
+
+/* ACCIONES */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BOTONES */
+.btn-ver,
+.btn-editar,
+.btn-eliminar {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* VER (AZUL) */
+.btn-ver {
+  background: #007bff;
+  color: white;
+}
+
+.btn-ver:hover {
+  background: #0064cf;
+  transform: scale(1.05);
+}
+
+/* EDITAR (VERDE) */
+.btn-editar {
+  background: #28a745;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* ELIMINAR (ROJO) */
+.btn-eliminar {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background: #bb2d3b;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pedidos-title {
+    font-size: 24px;
+  }
+
+  .pedidos-container {
+    padding: 10px;
+  }
+}

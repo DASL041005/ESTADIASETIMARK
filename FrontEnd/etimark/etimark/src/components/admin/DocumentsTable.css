@@ -1,0 +1,40 @@
+.docs-table {
+width: 100%;
+border-collapse: collapse;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+}
+
+
+.docs-table th, .docs-table td {
+padding: 12px;
+border-bottom: 1px solid #ddd;
+}
+
+
+.docs-table tr:hover {
+background: #f3f3f3;
+}
+.docs-controls {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+
+.docs-controls input {
+padding: 8px 10px;
+border-radius: 6px;
+border: 1px solid #ddd;
+width: 280px;
+}
+
+
+.docs-info { align-self: center; }
+
+
+.pagination { margin-top: 12px; display: flex; gap: 10px; align-items: center; }
+
+
+.pagination button { padding: 6px 10px; border-radius: 6px; }
