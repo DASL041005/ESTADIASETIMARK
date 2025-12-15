@@ -1,0 +1,143 @@
+.clientes-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.clientes-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b73;
+  margin-bottom: 20px;
+}
+
+.clientes-table-wrapper {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+}
+
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clientes-table th {
+  background: #003b73;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.clientes-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+/* ESTADOS */
+.estado {
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+}
+
+.estado-pendiente {
+  background: #f6a729;
+}
+
+.estado-aprobada {
+  background: #28a745;
+}
+
+/* ACCIONES */
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.acciones button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-ver {
+  background: #00a8e8;
+}
+
+.btn-ver:hover {
+  background: #007bb5;
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #003b73;
+}
+
+.btn-editar:hover {
+  background: #e0a800;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+}
+
+.btn-eliminar:hover {
+  background: #b02a37;
+}
+
+/* 🔹 Fondo oscuro */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* 🔹 Caja del modal */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn .2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  color: #003b73;
+}
+
+.modal-close {
+  background: #aaa;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+

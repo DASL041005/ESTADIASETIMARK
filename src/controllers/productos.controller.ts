@@ -18,13 +18,18 @@ export const createProduct = async (req: Request, res: Response) => {
 // Obtener todos los productos
 export const getAllProducts = async (_req: Request, res: Response) => {
   try {
-    const products = await prisma.productos.findMany();
+    const products = await prisma.productos.findMany({
+      include: {
+        tipo: true, // ⬅ incluye el nombre del tipo
+      },
+    });
     res.json({ products });
   } catch (error: any) {
     console.error("Error getAllProducts:", error);
     res.status(500).json({ message: error.message || "Error al obtener productos" });
   }
 };
+
 
 // Obtener producto por ID
 export const getProductById = async (req: Request, res: Response) => {

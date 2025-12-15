@@ -1,34 +1,39 @@
 // src/components/NavBar.tsx
-import React from 'react';
-import './NavBar.css';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./NavBar.css";
 
 interface NavItem {
   label: string;
   href: string;
-  isActive: boolean; // Para simular el estado "Software" seleccionado
 }
 
 const navItems: NavItem[] = [
-  { label: 'Software', href: '/software', isActive: true }, // Elemento seleccionado
-  { label: 'Impresoras', href: '/impresoras', isActive: false },
-  { label: 'Soporte', href: '/soporte', isActive: false },
-  { label: 'Rollos', href: '/rollos', isActive: false },
-  // Agrega más ítems aquí
+  { label: "Software", href: "/software" },
+  { label: "Impresoras", href: "/impresoras" },
+  { label: "Soporte", href: "/soporte" },
+  { label: "Rollos", href: "/rollos" },
 ];
 
 const NavBar: React.FC = () => {
+  const location = useLocation(); // <-- detecta el path actual
+
   return (
     <nav className="nav-bar">
       <div className="nav-container">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className={`nav-item ${item.isActive ? 'active' : ''}`}
-          >
-            {item.label}
-          </a>
-        ))}
+        {navItems.map((item) => {
+          const isActive = location.pathname === item.href;
+
+          return (
+            <Link
+              key={item.label}
+              to={item.href}
+              className={`nav-item ${isActive ? "active" : ""}`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );

@@ -6,7 +6,7 @@ export interface Product {
   oldPrice?: number;
   stock: number;
   imageUrl: string;
-  category: string;
+  category: string; // si quieres union literal, hazla consistente: 'ROLLOS'|'SOFTWARE'|...
   rating: number;
   isOffer: boolean;
 }

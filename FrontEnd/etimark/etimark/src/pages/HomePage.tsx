@@ -3,7 +3,7 @@ import React from 'react';
 import BannerCarousel from '../components/BannerCarousel';
 
 // Importamos tus productos reales
-import { mockProducts } from '../data/mockProducts';
+import { mockProducts } from "../data/mockProducts";
 import type { Product } from '../types/Product';
 
 

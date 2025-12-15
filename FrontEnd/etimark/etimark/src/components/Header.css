@@ -3,16 +3,18 @@
   background-color: #FFFFFF; /* Blanco */
   border-bottom: 1px solid #E0E0E0; /* Gris claro */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 10px 40px;
+  padding: 15px 60px;
 }
 
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px; /* opcional: hazlo más ancho aún */
+  width: 100%;
   margin: 0 auto;
 }
+
 
 /* Logo */
 .logo {
@@ -64,10 +66,13 @@
 }
 
 /* Acciones de Usuario */
+/* Mantener el mismo ancho del área de botones antes y después del login */
 .user-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 320px; /* 👈 Ajuste clave */
+  justify-content: flex-end;
 }
 
 .user-btn {
@@ -122,3 +127,31 @@
   font-size: 0.7em;
   line-height: 1;
 }
+
+/* BOTÓN CERRAR SESIÓN */
+.logout-btn {
+  background-color: #FF5252; /* Rojo elegante */
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 8px 15px;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #D63232; /* Rojo más oscuro al hover */
+}
+
+.user-role-badge {
+  background-color: #E6F9FF;
+  color: #003B73;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+  border: 1px solid #00A8E8;
+  display: flex;
+  align-items: center;
+}
+

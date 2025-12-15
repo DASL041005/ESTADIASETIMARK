@@ -1,20 +1,16 @@
 import React from "react";
-import SideBar from "../admin/SideBar";
-import NavBar from "../admin/NavBar";
-import "./Layout.css";
+import AdminSidebar from "./AdminSidebar";
+import "./AdminLayout.css";
 
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
-return (
-<div className="layout">
-<SideBar />
-<div className="main-content">
-<NavBar />
-<div className="page-content">{children}</div>
-</div>
-</div>
-);
+const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="admin-layout">
+      <AdminSidebar />   {/* ❌ Quitamos adminName */}
+      <main className="admin-content">
+        {children}
+      </main>
+    </div>
+  );
 };
 
-
-export default Layout;
+export default AdminLayout;

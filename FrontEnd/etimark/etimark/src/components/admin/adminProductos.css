@@ -1,0 +1,170 @@
+/* CONTENEDOR PRINCIPAL */
+.pedidos-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.pedidos-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003B73;
+  margin-bottom: 20px;
+}
+
+/* ========================= */
+/*       TABLA ESTILO        */
+/* ========================= */
+.pedidos-table-wrapper {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+  overflow-x: auto;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pedidos-table th {
+  background: #003B73;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.pedidos-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+  color: #333;
+}
+
+/* ========================= */
+/*        ACCIONES           */
+/* ========================= */
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.acciones button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+/* VER */
+.btn-ver {
+  background: #00A8E8;
+}
+
+.btn-ver:hover {
+  background: #007bb5;
+}
+
+/* EDITAR */
+.btn-editar {
+  background: #ffc107;
+  color: #003B73 !important;
+}
+
+.btn-editar:hover {
+  background: #e0a800;
+}
+
+/* ELIMINAR */
+.btn-eliminar {
+  background: #dc3545;
+}
+
+.btn-eliminar:hover {
+  background: #b02a37;
+}
+
+/* ========================= */
+/*          MODALES          */
+/* ========================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.modal-content h2 {
+  color: #003B73;
+  font-size: 1.5rem;
+}
+
+.modal-content label {
+  font-weight: bold;
+  color: #003B73;
+}
+
+.modal-content input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  font-size: 15px;
+}
+
+/* BOTONES DEL MODAL */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-close {
+  background: #999;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-close:hover {
+  background: #777;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

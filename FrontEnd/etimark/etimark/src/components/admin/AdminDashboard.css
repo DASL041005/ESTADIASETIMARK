@@ -1,24 +1,80 @@
-.title {
-font-size: 28px;
-margin-bottom: 20px;
+/* CONTENEDOR GENERAL DEL DASHBOARD */
+.admin-dashboard-container {
+  width: 100%; /* Ocupa toda la pantalla excepto el sidebar */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fa; /* Fondo suave */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-
-.dashboard-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
+/* TÍTULO */
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003B73;
+  margin-bottom: 25px;
 }
 
-
-.card {
-background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* FILAS DEL DASHBOARD */
+.dashboard-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px; /* Separación entre tarjetas */
+  margin-bottom: 25px;
 }
 
-
-.big {
-grid-column: span 2;
+/* TARJETAS */
+.dashboard-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+  min-height: 300px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* TÍTULOS DE TARJETAS */
+.dashboard-card h3 {
+  margin-bottom: 15px;
+  color: #003B73;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* TABLA DE EMPLEADOS */
+.employees-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employees-table th {
+  text-align: left;
+  padding: 10px;
+  background: #003B73;
+  color: white;
+}
+
+.employees-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ESTADOS */
+.activo {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.inactivo {
+  color: #dc3545;
+  font-weight: bold;
+}
+

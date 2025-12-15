@@ -5,9 +5,9 @@ import EtimarkLogo from '../assets/etimark_logo.png';
 
 import { api } from '../services/api';
 import axios from "axios";
-import { jwtDecode } from "jwt-decode";  // ⬅️ Nota: sin las llaves
+import { jwtDecode } from "jwt-decode";
+import { useAuth } from "../context/AuthContext"; // ← IMPORTANTE
 
-// Definir tipo del payload del JWT
 interface JwtPayload {
   rol: "CLIENTE" | "EMPLEADO" | "ADMIN";
   nombre?: string;
@@ -19,6 +19,8 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const { login } = useAuth(); // ← IMPORTANTE
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,15 +34,14 @@ const LoginPage: React.FC = () => {
 
       const { token } = response.data;
 
-      // Guardar token en localStorage
-      localStorage.setItem("token", token);
+      // 🔥 GUARDAR EN AUTH CONTEXT (no solo en localStorage)
+      login(token);
 
-      // Decodificar token
       const decoded = jwtDecode<JwtPayload>(token);
       const rol = decoded.rol;
 
-      // Redirección según rol
-      if (rol === "CLIENTE") navigate("/productos");
+      // 🔥 REDIRIGIR POR ROL
+      if (rol === "CLIENTE") navigate("/rollos");
       else if (rol === "EMPLEADO") navigate("/empleado/pedidos");
       else if (rol === "ADMIN") navigate("/admin/dashboard");
       else alert("Rol desconocido");
@@ -64,7 +65,6 @@ const LoginPage: React.FC = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        
         <div className="login-info-panel panel-left">
           <div className="logo-placeholder">
             <img src={EtimarkLogo} alt="ETIMARK Logo" className="etimark-logo-small" />
@@ -104,7 +104,6 @@ const LoginPage: React.FC = () => {
             <button type="submit" className="login-button" disabled={loading}>
               {loading ? "Ingresando..." : "Iniciar Sesión"}
             </button>
-
           </form>
         </div>
       </div>

@@ -1,0 +1,120 @@
+/* === SIDEBAR FIJA Y PEGADA === */
+.admin-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 260px !important;
+  height: 100vh !important;
+
+  background: #003B73;
+  color: white;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra todo horizontalmente */
+  justify-content: space-between; /* empuja logout abajo */
+
+  overflow: hidden;
+  margin: 0 !important;
+  border: 0 !important;
+  z-index: 99999;
+}
+
+.admin-content {
+  margin-left: 260px;   /* deja espacio para la sidebar */
+  padding: 25px;        /* espacio interno */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background: #f4f9ff;
+  box-sizing: border-box;
+}
+
+
+/* === LOGO === */
+.sidebar-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.sidebar-logo img {
+  width: 180px !important;  /* más grande */
+  max-width: 90% !important; /* evita que salga de la caja */
+  height: auto !important;
+  display: block;
+}
+
+/* === USUARIO === */
+.sidebar-user {
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-user p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.sidebar-user h3 {
+  margin: 8px 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00A8E8;
+}
+
+/* === MENÚ === */
+.sidebar-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  flex-grow: 1;
+  margin: 20px 0;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-menu .active {
+  background: #00A8E8;
+  color: #003B73;
+  font-weight: bold;
+}
+
+/* === BOTÓN SALIR ABAJO === */
+.logout-button {
+  background: #44E0D0;
+  color: #003B73;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  width: 100%;
+
+  margin-top: auto;        /* lo empuja al fondo */
+  margin-bottom: 10px;     /* pequeño espacio para que no se pegue al borde */
+}
+
+.logout-button:hover {
+  background: #37b7a8;
+}

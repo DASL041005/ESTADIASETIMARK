@@ -1,0 +1,147 @@
+/* ===========================================================
+   === SIDEBAR FIJA — ADMIN Y EMPLOYEE (UNIFICADO) ===========
+   =========================================================== */
+.sidebar-admin,
+.employee-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 260px !important;
+  height: 100vh !important;
+
+  background: #003B73;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+  margin: 0 !important;
+  border: 0 !important;
+  z-index: 99999 !important;
+}
+
+/* === CONTENIDO GENERAL (todo lo que no sea sidebar) === */
+.admin-content,
+.employee-content {
+  margin-left: 260px;   
+  padding: 25px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background: #f4f9ff;
+  box-sizing: border-box;
+}
+
+/* ===========================================================
+   === LOGO ==================================================
+   =========================================================== */
+.sidebar-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.sidebar-logo img {
+  width: 180px !important;
+  max-width: 90% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* ===========================================================
+   === MENSAJE DE BIENVENIDA / USUARIO =======================
+   =========================================================== */
+.sidebar-user,
+.sidebar-header {
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-user h3,
+.welcome-message {
+  margin: 8px 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00A8E8;
+}
+
+.sidebar-user p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===========================================================
+   === MENÚ DE OPCIONES ======================================
+   =========================================================== */
+.sidebar-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  flex-grow: 1;
+  margin: 20px 0;
+}
+
+.sidebar-menu a,
+.menu-link {
+  text-decoration: none;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.07);
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-menu a:hover,
+.menu-link:hover {
+  background: #00A8E8;
+  color: #003B73;
+  transform: translateX(4px);
+}
+
+.sidebar-menu .active {
+  background: #00A8E8;
+  color: #003B73;
+  font-weight: bold;
+}
+
+/* ===========================================================
+   === BOTÓN CERRAR SESIÓN — Siempre abajo ===================
+   =========================================================== */
+.logout-container {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+
+  background-color: #44E0D0;
+  color: #003B73;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #37b7a8;
+  transform: scale(1.02);
+}
